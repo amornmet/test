@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web-server:
+    build: .
+    container_name: test-docker-compose-pliw-nginx
+    ports:
+      - "8909:8080"
+    restart: always
+    networks:
+      - monitoring-net
+
+networks:
+  monitoring-net:
+    driver: bridge
